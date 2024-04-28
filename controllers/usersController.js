@@ -9,7 +9,7 @@ const fetchAllUsers = async (req,res) =>{
 const fetchUser = async (req, res) =>{
 
 const userId = req.params.id
-const user = await Note.findById(userId);
+const user = await User.findById(userId);
 res.json({user: user});
 }
 //Create User
@@ -31,7 +31,7 @@ const updateUser = async (req,res)=>{
         title:title,
         name:name,
     });
-    const updatedUser = await User.findById(uderId);
+    const updatedUser = await User.findById(userId);
     res.json({user: updatedUser});
 }
 //Delete User
